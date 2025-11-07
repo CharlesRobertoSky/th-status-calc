@@ -1,10 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Stats</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Calculadora</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav>
+        <button id="nav-char" class="active">Char</button>
+        <button id="nav-calc">Calc</button>
+        <button id="nav-info">Info</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="page-char" class="page page-active">
+        <h2>Dados do Personagem</h2>
+        <div id="char-container">
+          <div class="section-container">
+            <h3>Atributos de Ataque</h3>
+            <div class="input-group">
+              <label for="char-base-atk">ATK Base:</label>
+              <input type="number" id="char-base-atk" placeholder="____" />
+            </div>
+            <div class="input-group">
+              <label for="char-percent-atk">ATK Porcento (%):</label>
+              <input type="number" id="char-percent-atk" placeholder="___S_" />
+            </div>
+          </div>
+
+          <div class="section-container">
+            <h3>Atributos de HP</h3>
+            <div class="input-group">
+              <label for="char-base-hp">HP Base:</label>
+              <input type="number" id="char-base-hp" placeholder="_____" />
+            </div>
+            <div class="input-group">
+              <label for="char-percent-hp">HP Porcento (%):</label>
+              <input type="number" id="char-percent-hp" placeholder="_____" />
+            </div>
+          </div>
+        </div>
+
+        <button id="char-submit" class="submit-btn">
+          Enviar para Calculadora
+        </button>
+      </section>
+
+      <section id="page-calc" class="page">
+        <h2>Calculadora de Ganhos</h2>
+
+        <div class="section-container">
+          <h3>Cálculo de Ataque</h3>
+          <div class="result-area" style="margin-bottom: 1.5rem">
+            <p>
+              Base ATK Total (da pág Char):
+              <span id="calc-base-atk-total">0,00</span>
+            </p>
+          </div>
+
+          <div class="input-group">
+            <label for="calc-adt-atk">ADT ATK Base (Valor adicional):</label>
+            <input
+              type="number"
+              id="calc-adt-atk"
+              step="0.01"
+              placeholder="0.00"
+            />
+          </div>
+          <div class="input-group">
+            <label for="calc-new-percent-atk">New Percent ATK (%):</label>
+            <input
+              type="number"
+              id="calc-new-percent-atk"
+              step="0.01"
+              placeholder="Deixe em branco para usar o % original"
+            />
+          </div>
+          <button id="calc-submit-atk" class="submit-btn">Resolver ATK</button>
+
+          <div
+            class="result-area"
+            id="calc-result-area-atk"
+            style="display: none"
+          >
+            <p>Novo ATK Total: <span id="calc-result-atk">0,00</span></p>
+            <p>
+              Diferença de Ganho (Número):
+              <span id="calc-diff-atk-num">0,00</span>
+            </p>
+            <p>
+              Diferença de Ganho (%): <span id="calc-diff-atk-perc">0,00%</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="section-container">
+          <h3>Cálculo de HP</h3>
+          <div class="result-area" style="margin-bottom: 1.5rem">
+            <p>
+              Base HP Total (da pág Char):
+              <span id="calc-base-hp-total">0,00</span>
+            </p>
+          </div>
+
+          <div class="input-group">
+            <label for="calc-adt-hp">ADT HP Base (Valor adicional):</label>
+            <input
+              type="number"
+              id="calc-adt-hp"
+              step="0.01"
+              placeholder="0.00"
+            />
+          </div>
+          <div class="input-group">
+            <label for="calc-new-percent-hp">New Percent HP (%):</label>
+            <input
+              type="number"
+              id="calc-new-percent-hp"
+              step="0.01"
+              placeholder="Deixe em branco para usar o % original"
+            />
+          </div>
+          <button id="calc-submit-hp" class="submit-btn">Resolver HP</button>
+
+          <div
+            class="result-area"
+            id="calc-result-area-hp"
+            style="display: none"
+          >
+            <p>Novo HP Total: <span id="calc-result-hp">0,00</span></p>
+            <p>
+              Diferença de Ganho (Número):
+              <span id="calc-diff-hp-num">0,00</span>
+            </p>
+            <p>
+              Diferença de Ganho (%): <span id="calc-diff-hp-perc">0,00%</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="page-info" class="page">
+        <h2>Histórico de Cálculos</h2>
+        <div id="info-terminal">Bem-vindo ao terminal de histórico...</div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>

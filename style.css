@@ -1,0 +1,164 @@
+/* Define as variáveis de cor da paleta */
+:root {
+  --dark-purple: #9f96ce;
+  --mid-purple: #cfc8e7;
+  --light-purple: #e7e1f3;
+  --text-color: #333;
+}
+
+/* Estilos Globais */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--light-purple);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Cabeçalho e Navegação */
+header {
+  background-color: var(--dark-purple);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav button {
+  background-color: var(--mid-purple);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+  background-color: var(--light-purple);
+}
+
+nav button.active {
+  background-color: var(--light-purple);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteúdo Principal e Páginas */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page {
+  display: none; /* Oculta todas as páginas por padrão */
+}
+
+.page-active {
+  display: block; /* Exibe apenas a página ativa */
+}
+
+/* Estilos de Seção e Formulário */
+.section-container {
+  background-color: #fff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--mid-purple);
+}
+#page-char {
+  text-align: center;
+}
+#char-container {
+  display: flex;
+  justify-content: center;
+}
+
+h2,
+h3 {
+  color: var(--dark-purple);
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.input-group input[type='number'] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--mid-purple);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button.submit-btn {
+  background-color: var(--dark-purple);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button.submit-btn:hover {
+  background-color: #8a81b9;
+}
+
+/* Página CALC - Resultados */
+.result-area {
+  background-color: var(--light-purple);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.result-area p {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.result-area span {
+  font-weight: bold;
+  color: #333;
+}
+
+.diff-gain {
+  color: green;
+}
+
+.diff-loss {
+  color: red;
+}
+
+/* Página INFO - Terminal */
+#info-terminal {
+  background-color: #2b2b2b;
+  color: #f0f0f0;
+  font-family: 'Courier New', Courier, monospace;
+  height: 500px;
+  max-height: 70vh;
+  overflow-y: auto; /* Adiciona barra de rolagem vertical */
+  padding: 1rem;
+  border-radius: 5px;
+  white-space: pre-wrap; /* Quebra a linha sem quebrar o layout */
+  word-wrap: break-word;
+  border: 1px solid var(--dark-purple);
+}
