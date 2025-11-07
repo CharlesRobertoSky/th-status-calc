@@ -162,3 +162,9 @@ button.submit-btn:hover {
   word-wrap: break-word;
   border: 1px solid var(--dark-purple);
 }
+
+@media (max-width: 600px) {
+  #char-container {
+    display: block;
+  }
+}
